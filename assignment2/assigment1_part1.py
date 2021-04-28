@@ -5,10 +5,7 @@ from writer import write
 
 
 def main():
-    """Hello text.
-
-    :param args : command line arguments
-    """
+    """in the function we have to do all the tasks."""
     start_time = time.time()
 
     with urllib.request.urlopen('https://greenteapress.com/thinkpython2/code/words.txt') as resp:
