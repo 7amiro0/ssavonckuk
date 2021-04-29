@@ -1,9 +1,10 @@
+"""Module for search palindromes."""
 import urllib.request
 import time
+from writer import write
 
+"""in the function we have to do all the tasks."""
 start_time = time.time()
-
-my_file = open("kz.txt", 'w')
 
 with urllib.request.urlopen('https://greenteapress.com/thinkpython2/code/words.txt') as resp:
     sulka_one = resp.read().decode('utf-8').lower()
@@ -11,18 +12,14 @@ with urllib.request.urlopen('https://greenteapress.com/thinkpython2/code/words.t
 with urllib.request.urlopen('https://inventwithpython.com/dictionary.txt') as resp:
     sulka_two = resp.read().decode('utf-8').lower()
 
-list_polegram = set(sulka_one.split() + sulka_two.split())
-list_polegramas = list()
+list_words = set(sulka_one.split() + sulka_two.split())
 
-for x in list_polegram:
-    if x == x[::-1]:
-        list_polegramas.append(x)
-        my_file.write(str(x))
-        my_file.write('\n')
+list_palindrome = []
 
-my_file.close()
+for word in list_words:
+    if word == word[::-1]:
+        list_palindrome.append(word)
 
-finish_time = time.time()
-
-print('I was able to find ', str(len(list_polegramas)))
-print('I was able to do it for ', int(finish_time - start_time), 'sec')
+write(list_palindrome, "file.txt")
+duration_program = time.time() - start_time
+print("duration program =", duration_program, "found palindrome", len(list_palindrome))
