@@ -10,17 +10,31 @@ def main():
 
     word_list = []
 
-    for rider in link:
-        if rider == rider[::-1]:
-            word_list.append(rider)
-            word_list.sort()
+    for word in link:
+        if word[::-1] in link:
+            word_list.append(word)
+        if word[1::-1] in link:
+            word_list.append(word)
+        if word[2::-1] in link:
+            word_list.append(word)
+        if word[3::-1] in link:
+            word_list.append(word)
+        if word[4::-1] in link:
+            word_list.append(word)
+        if word[5::-1] in link:
+            word_list.append(word)
+        if word[6::-1] in link:
+            word_list.append(word)
+        if word[7::-1] in link:
+            word_list.append(word)
 
     my_file = open('record.txt', 'w')
-
-    for word in word_list:
+    word_list.sort()
+    for word in set(word_list):
         my_file.write(str(word) + '\n')
 
     my_file.close()
 
 
+main()
 cProfile.run('main()')
