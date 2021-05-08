@@ -7,27 +7,20 @@ def main():
     """Works function."""
     with urllib.request.urlopen('https://inventwithpython.com/dictionary.txt') as resp:
         link = set(resp.read().decode('utf-8').lower().split())
-
     word_list = []
 
     for word in link:
-        if word[::-1] in link:
-            word_list.append(word)
-        if word[1::-1] in link:
-            word_list.append(word)
-        if word[2::-1] in link:
-            word_list.append(word)
-        if word[3::-1] in link:
-            word_list.append(word)
-        if word[4::-1] in link:
-            word_list.append(word)
-        if word[5::-1] in link:
-            word_list.append(word)
-        if word[6::-1] in link:
-            word_list.append(word)
-        if word[7::-1] in link:
-            word_list.append(word)
-
+        rever_word = word[::-1]
+        for len_ in range(0, len(word)):
+            if word[len_:] in word_list or word[len_:] == word[len_::-1]:
+                if len_ != len(word):
+                    word_list.append(word)
+                    word_list.append(rever_word)
+                continue
+            if rever_word[len_:] in word_list or rever_word[len_:] == rever_word[len_::-1]:
+                if len_ != len(word):
+                    word_list.append(word)
+                    word_list.append(rever_word)
     my_file = open('record.txt', 'w')
     word_list.sort()
     for word in set(word_list):
