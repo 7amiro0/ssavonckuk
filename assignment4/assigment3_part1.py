@@ -15,27 +15,28 @@ def main():
 
     dict_ = defaultdict(set)
 
-    enter = input('enter your anegrame: ')
-    enter_sort = ''.join(sorted(enter))
+    while 1:
+        enter = input('enter your anegrame: ')
+        enter_sort = ''.join(sorted(enter))
 
-    if len(enter) > 1:
+        if len(enter) > 1:
 
-        for word in link1:
-            if enter_sort == ''.join(sorted(word)) and enter != word:
-                dict_[enter].add(word)
+            for word in link1:
+                if enter_sort == ''.join(sorted(word)) and enter != word:
+                    dict_[enter].add(word)
 
-        for word in link2:
-            if enter_sort == ''.join(sorted(word)) and enter != word:
-                dict_[enter].add(word)
+            for word in link2:
+                if enter_sort == ''.join(sorted(word)) and enter != word:
+                    dict_[enter].add(word)
 
-        for word in link3:
-            if enter_sort == ''.join(sorted(word)) and enter != word:
-                dict_[enter].add(word)
+            for word in link3:
+                if enter_sort == ''.join(sorted(word)) and enter != word:
+                    dict_[enter].add(word)
 
-        if len(dict_) == 0:
-            print('no anagram found for word ')
-        else:
-            print(dict_)
+            if len(dict_) == 0:
+                print('no anagram found for word ')
+            else:
+                print(dict_)
 
 
 cProfile.run('main()')
