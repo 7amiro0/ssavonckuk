@@ -16,7 +16,7 @@ def main():
     dict_ = defaultdict(set)
 
     while 1:
-        enter = input('enter your anegrame: ')
+        enter = input('enter your anagrame: ')
         enter_sort = ''.join(sorted(enter))
 
         if len(enter) > 1:
