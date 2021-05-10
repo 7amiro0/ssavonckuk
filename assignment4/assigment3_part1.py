@@ -36,7 +36,8 @@ def main():
             if len(dict_) == 0:
                 print('no anagram found for word ')
             else:
-                print(dict_)
+                for writer in dict_[enter]:
+                    print(writer)
 
 
 cProfile.run('main()')
