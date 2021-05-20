@@ -5,13 +5,13 @@ if choice == '1':
     word = input('enter your message: ')
     word = word.split()
     key = input('enter your key: ')
-    key = key.split(",")
+    key = key.split()
 
     if len(key) == 0 or len(word) == 0:
-        if len(input('Pleas pres enter of exit program')) == 0:
-            exit()
+        input('Pleas pres enter of exit program')
+        exit()
 
-    column = 5
+    column = 4
     list_ = []
     text = []
 
@@ -28,14 +28,14 @@ if choice == '1':
     print(text)
 elif choice == "2":
 
-    word = input('enter your secret message: ')
+    word = input('enter your message: ')
     word = word.split()
     key = input('enter your key: ')
-    key = key.split(",")
+    key = key.split()
 
     if len(key) == 0 or len(word) == 0:
-        if len(input('Pleas pres enter of exit program')) == 0:
-            exit()
+        input('Pleas pres enter of exit program')
+        exit()
 
     column = 5
     list_ = []
