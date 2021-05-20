@@ -7,6 +7,10 @@ if choice == '1':
     key = input('enter your key: ')
     key = key.split(",")
 
+    if len(key) == 0 or len(word) == 0:
+        if len(input('Pleas pres enter of exit program')) == 0:
+            exit()
+
     column = 5
     list_ = []
     text = []
@@ -29,6 +33,10 @@ elif choice == "2":
     key = input('enter your key: ')
     key = key.split(",")
 
+    if len(key) == 0 or len(word) == 0:
+        if len(input('Pleas pres enter of exit program')) == 0:
+            exit()
+
     column = 5
     list_ = []
     text = []
@@ -46,6 +54,6 @@ elif choice == "2":
             text += list_[abs(int(ke)) - 1]
 
     for i in range(len(word)):
-        result += text[i] + ' '
+        result_text += text[i] + ' '
 
-    print(result)
+    print(result_text)
