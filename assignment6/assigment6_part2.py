@@ -1,52 +1,41 @@
 # ======================================================================================================================#
 
-"""Hi, my program can encrypt texts."""
+"""Hi, my program can decrypt texts."""
 
 # ======================================================================================================================#
 
+words = input('enter your secret txt: ') # Here you see your text that you want to decrypt.
 
 # ======================================================================================================================#
 
-"""If he answers 1, then the program will encrypt the text, let's ask the brow what text he needs to encrypt."""
-
-# ======================================================================================================================#
-words = input('enter your txt: ') # Here you see your text that you want to encrypt.
-# ======================================================================================================================#
-
-"""We do a little magic."""
+"""Some magic again."""
 
 # ======================================================================================================================#
 
-words = words.upper()
 words = words.split()
 big_word = ''.join(words)
+split = int(len(big_word) / 2)
 
 first_later = []
 second_later = []
 resoult = ''
-space_in_txt = []
 
-for later in big_word[::2]:
+for later in big_word[:split:]:
     first_later.append(later)
-
-for later in big_word[1::2]:
+for later in big_word[split:]:
     second_later.append(later)
-
-for later in first_later + second_later:
-    space_in_txt.append(later)
-for i in range(len(space_in_txt)):
-    if (i + 1) % 5 == 0:
-        space_in_txt.insert(i, ' ')
-resoult += ''.join(space_in_txt)
+all_list = [first_later, second_later]
+for i in range(len(first_later)):
+    resoult += ''.join(all_list[0][i])
+    resoult += ''.join(all_list[1][i])
 
 # ======================================================================================================================#
 
-"""And now the secret text is ready."""
+"""And here is the (not ideal) decryption of tex. """
+
 # ======================================================================================================================#
 
 print(resoult)
-
-# ======================================================================================================================#
 
 """The end."""
 
