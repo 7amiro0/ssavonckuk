@@ -12,20 +12,26 @@ if choice == '1':
         exit()
 
     column = 4
+    row = 4
     list_ = []
     text = []
+    result_text = ''
 
     for i in range(column):
         list_.append([])
     for w in range(len(word)):
-        list_[w % column].append(word[w])
+        list_[w % row].append(word[w])
     for ke in key:
         if int(ke) < 0 and list_[abs(int(ke)) - 1] not in text:
             text += list_[abs(int(ke)) - 1][::-1]
         elif int(ke) > 0 and list_[abs(int(ke)) - 1] not in text:
             text += list_[abs(int(ke)) - 1]
 
-    print(text)
+    for te in text:
+        result_text += te + ' '
+
+    print(result_text)
+
 elif choice == "2":
 
     word = input('enter your message: ')
@@ -37,7 +43,8 @@ elif choice == "2":
         input('Pleas pres enter of exit program')
         exit()
 
-    column = 5
+    column = 4
+    row = 4
     list_ = []
     text = []
     result_text = ''
@@ -45,7 +52,7 @@ elif choice == "2":
     for i in range(column):
         list_.append([])
     for w in range(len(word)):
-        list_[w % column].append(word[w])
+        list_[w % row].append(word[w])
 
     for ke in key:
         if int(ke) < 0 and list_[abs(int(ke)) - 1] not in text:
