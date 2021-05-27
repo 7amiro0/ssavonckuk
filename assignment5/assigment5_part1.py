@@ -48,19 +48,28 @@ elif choice == "2":
     list_ = []
     text = []
     result_text = ''
+    x = 0
 
     for i in range(column):
         list_.append([])
     for w in range(len(word)):
-        list_[w % row].append(word[w])
+        if len(list_[x]) != 5:
+            list_[x].append(word[w])
+        else:
+            x += 1
+            list_[x].append(word[w])
 
     for ke in key:
         if int(ke) < 0 and list_[abs(int(ke)) - 1] not in text:
-            text += list_[abs(int(ke)) - 1][::-1]
+            text.append(list_[abs(int(ke)) - 1][::-1])
         elif int(ke) > 0 and list_[abs(int(ke)) - 1] not in text:
-            text += list_[abs(int(ke)) - 1]
+            text.append(list_[abs(int(ke)) - 1])
 
-    for i in range(len(word)):
-        result_text += text[i] + ' '
+    print(text)
 
+    for i in range(5):
+        result_text += text[0][i] + ' '
+        result_text += text[1][i] + ' '
+        result_text += text[2][i] + ' '
+        result_text += text[3][i] + ' '
     print(result_text)
