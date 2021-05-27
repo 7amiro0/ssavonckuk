@@ -1,4 +1,7 @@
 """Hi, my program can encrypt texts."""
+"""Zigzag text encryption method."""
+"""Example 'hi bro how are you' turns into
+HBOOAEOIRHWRYU"""
 
 words = input('enter your txt: ') # Here you see your text that you want to decrypt.
 
