@@ -11,7 +11,7 @@ if choice == '1':
         input('Pleas pres enter of exit program')
         exit()
 
-    column = 4
+    column = len(key)
     row = 4
     list_ = []
     text = []
@@ -43,7 +43,7 @@ elif choice == "2":
         input('Pleas pres enter of exit program')
         exit()
 
-    column = 4
+    column = len(key)
     row = 4
     list_ = []
     text = []

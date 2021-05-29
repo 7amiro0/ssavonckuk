@@ -3,7 +3,7 @@
 """Example 'hi bro how are you' turns into
 HBOOAEOIRHWRYU"""
 
-words = input('enter your txt: ') # Here you see your text that you want to decrypt.
+words = """Here you see your text that you want to decrypt."""
 
 """After this #========#, do not touch or change anything."""
 # ======================================================================================================================#

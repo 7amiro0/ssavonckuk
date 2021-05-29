@@ -4,7 +4,7 @@
 """Example 'HBOOAEOIRHWRYU' turns into
 HIBROHOWAREYOU"""
 
-words = input('enter your secret txt: ') # Here you see your text that you want to decrypt.
+words = """Here you see your text that you want to decrypt."""
 
 """After this #=============#, do not touch or change anything."""
 # ======================================================================================================================#
