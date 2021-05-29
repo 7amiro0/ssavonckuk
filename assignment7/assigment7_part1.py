@@ -26,16 +26,33 @@ LHPRESNRREHSAVAOASGRTOEEINEIYETTOTHLRAQORANAITNTHTRASCDOCCNUATRAFOTECOCPOHEALIAR
 SWNDENOREOLIUEEIAASGEVSTFORPTORHLLLEOMRWHUAEGAYEIULGEECHONSOIEFTHHRBVDRRSHETTESAGRHOSOETNSVNASWTAEFEE
 VNWELOHEALHIVHIIDDLAIFDDGNOPEELTOHOIOE'''
 
+b = 0
+mstr = 'ETAOIN'
 count = collections.Counter(messenger1)
-print('messenger nomers one most likely')
-if count["E"] > 6 or count["T"] > 6 or count["A"] > 6 or count["O"] > 6 or count["I"] > 6 or count["N"] > 6:
-    print('letters have changed their position')
-if count["E"] <= 6 or count["T"] <= 6 or count["A"] <= 6 or count["O"] <= 6 or count["I"] <= 6 or count["N"] <= 6:
-    print("Letters in the text are replaced")
 
-count = collections.Counter(messenger2)
-print('messenger nomers two most likely')
-if count["E"] > 6 or count["T"] > 6 or count["A"] > 6 or count["O"] > 6 or count["I"] > 6 or count["N"] > 6:
+print('messenger nomers one most likely')
+
+for i in count.most_common(6):
+    if i[0] in mstr:
+        b += 1
+if (b / 6) * 100 >= 50:
     print('letters have changed their position')
-if count["E"] <= 6 or count["T"] <= 6 or count["A"] <= 6 or count["O"] <= 6 or count["I"] <= 6 or count["N"] <= 6:
+    print(int((b / 6) * 100), "%")
+if (b / 6) * 100 < 50:
     print("Letters in the text are replaced")
+    print(int((b / 6) * 100), "%")
+
+b = 0
+count = collections.Counter(messenger2)
+
+print('messenger nomers two most likely')
+
+for i in count.most_common(6):
+    if i[0] in mstr:
+        b += 1
+if (b / 6) * 100 >= 50:
+    print('letters have changed their position')
+    print(int((b / 6) * 100), "%")
+if (b / 6) * 100 < 50:
+    print("Letters in the text are replaced")
+    print(int((b / 6) * 100), "%")
