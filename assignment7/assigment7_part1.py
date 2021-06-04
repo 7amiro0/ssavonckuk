@@ -1,17 +1,17 @@
 word = 'THIS OFF DETAINED ASCERTAIN WAYLAND CORRESPONDENTS OF AT WHY AND IF FILLS IT YOU GET THEY NEPTUNE THE TRIBUNE PLEASE ARE THEM CAN UP'
 word = word.split()
 open_text = 'correspondents of the Tribune wayland at neptune please ascertain why they are detained and get them off if you can this fills it up'
-for c in range(2, 12):
+for c in range(2, len(word)):
     if len(word) % c == 0:
         COLUMN = c
         key = []
-        for r in range(2, 12):
+        for r in range(len(word)):
             if COLUMN * r == len(word):
                 ROW = r
                 rever = -1
                 l = []
                 q = []
-                for k in range(1, COLUMN):
+                for k in range(1, COLUMN + 1):
                     rever = -rever
                     l.append(k * rever)
                     q.append(k * -rever)
