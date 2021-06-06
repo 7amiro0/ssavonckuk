@@ -1,4 +1,9 @@
-words = """Here you see your text that you want to decrypt"""
+"""After # ----------- # do not touch anything"""
+"""Here is the text to be encrypted
+                   |
+                   V"""
+words = "your text pleas"
+#----------------------------------------------------------------------------------------------------------------------#
 words = words.upper()
 words = words.split()
 big_word = ''.join(words)
@@ -25,4 +30,7 @@ for i in range(len(space_in_txt)):
         space_in_txt.insert(i, ' ')
 resoult += ''.join(space_in_txt)
 
+"""outputs the result
+    |
+    V"""
 print(resoult)
