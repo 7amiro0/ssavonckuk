@@ -1,6 +1,12 @@
+"""After # ----------- # do not touch anything"""
+"""Here we have a message that can be changed __
+                                                |
+                                                V"""
 word = 'THIS OFF DETAINED ASCERTAIN WAYLAND CORRESPONDENTS OF AT WHY AND IF FILLS IT YOU GET THEY NEPTUNE THE TRIBUNE PLEASE ARE THEM CAN UP'
 word = word.split()
-open_text = 'correspondents of the Tribune wayland at neptune please ascertain why they are detained and get them off if you can this fills it up'
+#----------------------------------------------------------------------------------------------------------------------#
+"""| Here we pick up the keys
+   V"""
 for c in range(2, len(word)):
     if len(word) % c == 0:
         COLUMN = c
@@ -24,7 +30,8 @@ for c in range(2, len(word)):
                 key.append(c)
                 list_ = []
                 x = 0
-
+                """|here everything is laid out in columns
+                   V"""
                 for i in range(COLUMN):
                     list_.append([])
                 for w in range(len(word)):
@@ -46,5 +53,6 @@ for c in range(2, len(word)):
                     for i in range(ROW):
                         for c in range(COLUMN - 1):
                             result_text += text[c][i] + ' '
-
+                    """| here the output and keys are output
+                       V"""
                     print(result_text.lower(), ke)
