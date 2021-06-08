@@ -8,22 +8,20 @@ words = words.upper()
 words = words.split()
 big_word = ''.join(words)
 
-first_later = []
-second_later = []
-third_later = []
+more_later = [[], [], []]
 resoult = ''
 space_in_txt = []
 
 for later in big_word[::3]:
-    first_later.append(later)
+    more_later[0].append(later)
 
 for later in big_word[1::3]:
-    second_later.append(later)
+    more_later[1].append(later)
 
 for later in big_word[2::3]:
-    third_later.append(later)
+    more_later[2].append(later)
 
-for later in first_later + second_later + third_later:
+for later in more_later[0] + more_later[1] + more_later[2]:
     space_in_txt.append(later)
 for i in range(len(space_in_txt)):
     if (i + 1) % 5 == 0:

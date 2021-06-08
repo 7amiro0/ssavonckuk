@@ -9,22 +9,20 @@ words = words.split()
 big_word = ''.join(words)
 split = int(len(big_word) / 3)
 
-first_later = []
-second_later = []
-third_later = []
+more_later = [[], [], []]
 resoult = ''
 
 for later in big_word[:split:]:
-    first_later.append(later)
+    more_later[0].append(later)
 
 for later in big_word[split:split + split]:
-    second_later.append(later)
+    more_later[1].append(later)
 
 for later in big_word[split + split:]:
-    third_later.append(later)
-all_list = [first_later, second_later, third_later]
-print(all_list)
-for i in range(len(first_later)):
+    more_later[2].append(later)
+all_list = [more_later[0], more_later[1], more_later[2]]
+
+for i in range(len(more_later[0])):
     resoult += ''.join(all_list[0][i])
     resoult += ''.join(all_list[1][i])
     resoult += ''.join(all_list[2][i])
