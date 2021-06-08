@@ -14,7 +14,7 @@ big_word = ''.join(words)
 
 first_later = []
 second_later = []
-resoult = ''
+result = ''
 space_in_txt = []
 
 for later in big_word[::2]:

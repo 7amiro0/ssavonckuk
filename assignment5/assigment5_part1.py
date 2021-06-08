@@ -65,8 +65,6 @@ elif choice == "2":
         elif int(ke) > 0 and list_[abs(int(ke)) - 1] not in text:
             text.append(list_[abs(int(ke)) - 1])
 
-    print(text)
-
     for i in range(5):
         result_text += text[0][i] + ' '
         result_text += text[1][i] + ' '
