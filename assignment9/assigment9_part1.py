@@ -16,7 +16,7 @@ for x in text:
     if x == ',' or x == ':' or x == '.' or x == '’' or x == ";" or x == "!" or x == "?" or x == "'":
         point = 0
         coma = True
-    if coma is True:
+    if coma:
         point += 1
     if point == enter + 1:
         result += ''.join(x)
