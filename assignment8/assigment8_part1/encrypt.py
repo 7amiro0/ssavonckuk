@@ -4,6 +4,10 @@
                    V"""
 words = "your text pleas"
 #----------------------------------------------------------------------------------------------------------------------#
+
+"""text no have space
+        |
+        V"""
 words = words.upper()
 words = words.split()
 big_word = ''.join(words)
@@ -12,15 +16,27 @@ more_later = [[], [], []]
 resoult = ''
 space_in_txt = []
 
+"""first later in text
+        |
+        V"""
 for later in big_word[::3]:
     more_later[0].append(later)
 
+"""second later in text
+        |
+        V"""
 for later in big_word[1::3]:
     more_later[1].append(later)
 
+"""third later in text
+        |
+        V"""
 for later in big_word[2::3]:
     more_later[2].append(later)
 
+"""replase letters at their positions
+            |
+            V"""
 for later in more_later[0] + more_later[1] + more_later[2]:
     space_in_txt.append(later)
 for i in range(len(space_in_txt)):

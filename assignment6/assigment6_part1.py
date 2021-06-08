@@ -8,28 +8,39 @@ words = """Here you see your text that you want to decrypt."""
 """After this #========#, do not touch or change anything."""
 # ======================================================================================================================#
 
+"""text no have space
+        |
+        V"""
 words = words.upper()
 words = words.split()
 big_word = ''.join(words)
 
-first_later = []
-second_later = []
+more_later = [[], []]
 result = ''
 space_in_txt = []
 
+"""first later in text
+        |
+        V"""
 for later in big_word[::2]:
-    first_later.append(later)
+    more_later.append(later)
 
+"""second later in text
+        |
+        V"""
 for later in big_word[1::2]:
-    second_later.append(later)
+    more_later.append(later)
 
-for later in first_later + second_later:
+"""replase letters at their positions
+            |
+            V"""
+for later in more_later[0] + more_later[1]:
     space_in_txt.append(later)
 for i in range(len(space_in_txt)):
     if (i + 1) % 5 == 0:
         space_in_txt.insert(i, ' ')
-resoult += ''.join(space_in_txt)
+result += ''.join(space_in_txt)
 
-print(resoult)
+print(result)
 
 """The end."""
