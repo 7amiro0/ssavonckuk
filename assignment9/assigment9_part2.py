@@ -2,7 +2,9 @@
 """This program masks 0 slate as plain text"""
 import urllib.request
 
+"""Here secrate text masks 0 slate as plain text."""
 TEXT = """Panelateastendofchapelslides"""
+"""Here, what letter should it go"""
 KEY = 3  # here we enter your password
 
 
