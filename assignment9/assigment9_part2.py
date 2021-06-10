@@ -1,25 +1,40 @@
+"""After # ----------- # do not touch anything."""
+"""This program masks 0 slate as plain text"""
 import urllib.request
 
-enter_text = """Panelateastendofchapelslides"""
-enter_password = int(input("Enter here numbers later in word: "))
-secrate = ''
-point = 0
-true_slovari = []
+TEXT = """Panelateastendofchapelslides"""
+KEY = 3  # here we enter your password
 
-with urllib.request.urlopen('https://greenteapress.com/thinkpython2/code/words.txt') as resp:
-    slovarif = resp.read().decode('utf-8').lower().split()
 
-for slovof in range(len(slovarif)):
-    if len(slovarif[slovof]) >= enter_password:
-        true_slovari.append(slovarif[slovof])
+# -------------------------------------------------------------------------------------------------------------------- #
+def main(text, key):
+    """work function encrypt"""
+    secrate = ''
+    point = 0
+    true_slovari = []
 
-slovo = true_slovari[point]
+    with urllib.request.urlopen("https://greenteapress.com/" \
+                                "thinkpython2/code/words.txt") as resp:
+        slovarif = resp.read().decode('utf-8').lower().split()
 
-for x in enter_text:
-    while slovo[enter_password - 1] != x.lower():
-        point += 1
-        slovo = true_slovari[point % len(true_slovari)]
-        print(slovo, x)
-    secrate += ' ' + slovo
+    for word in slovarif:
+        if len(word) >= key:
+            true_slovari.append(word)
 
-print(secrate)
+    if key > len(true_slovari):
+        print('your key very big')
+        exit()
+
+    slovo = true_slovari[point]
+
+    for later in text:
+        while slovo[key - 1] != later:
+            point += 1
+            slovo = true_slovari[point % len(true_slovari)]
+        secrate += ' ' + slovo
+
+    print(secrate)
+
+
+if __name__ == "__main__":
+    main(TEXT.lower(), KEY)
