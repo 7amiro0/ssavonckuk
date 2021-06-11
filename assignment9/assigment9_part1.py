@@ -15,7 +15,7 @@ KEY = 3
 
 # ----------------------------------------------------------------------------------------------------------------------#
 def main(text, key):
-    """work function decrypt"""
+    """Work function decrypt."""
     text = "".join(text.split())
     result = ''
     coma = False
@@ -25,8 +25,10 @@ def main(text, key):
         if x in set("',:.’;!?"):
             point = 0
             coma = True
+
         if coma:
             point += 1
+
         if point == key + 1:
             result += ''.join(x)
 

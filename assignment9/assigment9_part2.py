@@ -1,19 +1,22 @@
 """After # ----------- # do not touch anything."""
 """This program masks 0 slate as plain text"""
+
 import urllib.request
 
 """Here secrate text masks 0 slate as plain text."""
 TEXT = """Panelateastendofchapelslides"""
+
 """Here, what letter should it go"""
 KEY = 3  # here we enter your password
 
 
 # -------------------------------------------------------------------------------------------------------------------- #
 def main(text, key):
-    """work function encrypt"""
+    """Work function encrypt."""
     secrate = ''
     point = 0
     true_slovari = []
+    text = text.lower()
 
     with urllib.request.urlopen("https://greenteapress.com/" \
                                 "thinkpython2/code/words.txt") as resp:
@@ -24,7 +27,7 @@ def main(text, key):
             true_slovari.append(word)
 
     if key > len(true_slovari):
-        print('your key very big')
+        print('Your key very big')
         exit()
 
     slovo = true_slovari[point]
@@ -39,4 +42,4 @@ def main(text, key):
 
 
 if __name__ == "__main__":
-    main(TEXT.lower(), KEY)
+    main(TEXT, KEY)
