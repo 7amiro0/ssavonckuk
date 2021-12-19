@@ -8,7 +8,7 @@ words = """Here you see your text that you want to decrypt."""
 """After this #========#, do not touch or change anything."""
 # ======================================================================================================================#
 
-words = words.upper() """<- text no have space"""
+words = words.upper() #<- text no have space
 words = words.split()
 big_word = ''.join(words)
 
