@@ -9,12 +9,12 @@ def main():
     start_time = time.time()
 
     with urllib.request.urlopen('https://greenteapress.com/thinkpython2/code/words.txt') as resp:
-        sulka_one = resp.read().decode('utf-8').lower()
+        link_one = resp.read().decode('utf-8').lower()
 
     with urllib.request.urlopen('https://inventwithpython.com/dictionary.txt') as resp:
-        sulka_two = resp.read().decode('utf-8').lower()
+        link_two = resp.read().decode('utf-8').lower()
 
-    list_words = set(sulka_one.split() + sulka_two.split())
+    list_words = set(link_one.split() + link_two.split())
 
     list_palindrome = []
 
