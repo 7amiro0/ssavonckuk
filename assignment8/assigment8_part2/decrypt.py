@@ -1,29 +1,19 @@
 """After # ----------- # do not touch anything"""
-"""Here is the text to be deciphered
-                                  |
-                                  V"""
+"""Here is the text to be deciphered"""
 word = 'clayton prepared we and odor we run night to reduce cross or multiply to will proceed the will at sweet where be on langford hounds clayton owl bailed hickory hermes add the the tree of the'
 word = word.split()
 
-"""Here is the key to be encrypted
-                |
-                V"""
+"""Here is the key to be encrypted"""
 key = '-1 3 -2 6 5 -4'
 key = key.split()
 
-"""number of columns
-        |
-        V"""
+"""number of columns"""
 column = len(key)
 
-"""number of columns
-     |
-     V"""
+"""number of columns"""
 row = 7
 
-"""words that change
-            |
-            V"""
+"""words that change"""
 dict_ = {'hounds': 'batteries', 'odor': 'Vicksburg', 'clayton': 'April', 'sweet': '16', 'tree': 'Grand', 'owl': 'Gulf',
          'bailed': 'forts.', 'hickory': 'river', 'multiply': '25', 'add': '29.', 'hermes': 'Admiral',
          'langford': 'Porter.'}
@@ -57,7 +47,5 @@ for te in text.split():
         result_text += dict_[te] + ' '
     else:
         result_text += te + ' '
-"""outputs the result
-    |
-    V"""
+"""outputs the result"""
 print(result_text)
