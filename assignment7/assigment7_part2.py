@@ -39,8 +39,7 @@ count = collections.Counter(messenger1)
 print('messenger nomers one most likely')
 
 length = len(mstr)
-"""masege 1 |
-            V"""
+"""first massege"""
 for i in count.most_common(length):
     if i[0] in mstr:
         counter += 1
@@ -56,8 +55,7 @@ count = collections.Counter(messenger2)
 
 print('messenger nomers two most likely')
 
-"""masege 2 |
-            V"""
+"""second massege"""
 for i in count.most_common(length):
     if i[0] in mstr:
         counter += 1
