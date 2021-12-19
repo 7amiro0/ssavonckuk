@@ -15,28 +15,28 @@ def main(text, key):
     """Work function encrypt."""
     secrate = ''
     point = 0
-    true_slovari = []
+    dictionary = []
     text = text.lower()
 
     with urllib.request.urlopen("https://greenteapress.com/" \
                                 "thinkpython2/code/words.txt") as resp:
-        slovarif = resp.read().decode('utf-8').lower().split()
+        dictionary_words = resp.read().decode('utf-8').lower().split()
 
-    for word in slovarif:
+    for word in dictionary_words:
         if len(word) >= key:
-            true_slovari.append(word)
+            dictionary.append(word)
 
-    if key > len(true_slovari):
-        print('Your key very big')
+    if key > 13:
+        print('The key is too huge')
         exit()
 
-    slovo = true_slovari[point]
+    word = dictionary[point]
 
     for later in text:
-        while slovo[key - 1] != later:
+        while word[key - 1] != later:
             point += 1
-            slovo = true_slovari[point % len(true_slovari)]
-        secrate += ' ' + slovo
+            word = dictionary[point % len(dictionary)]
+        secrate += ' ' + word
 
     print(secrate)
 
