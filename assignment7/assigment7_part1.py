@@ -5,8 +5,7 @@
 word = 'THIS OFF DETAINED ASCERTAIN WAYLAND CORRESPONDENTS OF AT WHY AND IF FILLS IT YOU GET THEY NEPTUNE THE TRIBUNE PLEASE ARE THEM CAN UP'
 word = word.split()
 #----------------------------------------------------------------------------------------------------------------------#
-"""| Here we pick up the keys
-   V"""
+"""Here we pick up the keys"""
 for c in range(2, len(word)):
     if len(word) % c == 0:
         COLUMN = c
@@ -30,8 +29,7 @@ for c in range(2, len(word)):
                 key.append(c)
                 list_ = []
                 x = 0
-                """|here everything is laid out in columns
-                   V"""
+                """here everything is laid out in columns"""
                 for i in range(COLUMN):
                     list_.append([])
                 for w in range(len(word)):
@@ -53,6 +51,5 @@ for c in range(2, len(word)):
                     for i in range(ROW):
                         for c in range(COLUMN - 1):
                             result_text += text[c][i] + ' '
-                    """| here the output and keys are output
-                       V"""
+                    """here the output and keys are output"""
                     print(result_text.lower(), ke)
