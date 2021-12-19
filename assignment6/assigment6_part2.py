@@ -9,10 +9,7 @@ words = """Here you see your text that you want to decrypt."""
 """After this #=============#, do not touch or change anything."""
 # ======================================================================================================================#
 
-"""text no have space
-        |
-        V"""
-words = words.split()
+words = words.split() #<- text no have space
 big_word = ''.join(words)
 
 split = int(len(big_word) / 2)
@@ -20,22 +17,13 @@ split = int(len(big_word) / 2)
 more_later = [[], []]
 resoult = ''
 
-"""first later in text
-        |
-        V"""
-for later in big_word[:split:]:
+for later in big_word[:split:]: #<- first later in text
     more_later[0].append(later)
 
-"""second later in text
-        |
-        V"""
-for later in big_word[split:]:
+for later in big_word[split:]: #<- second later in text
     more_later[1].append(later)
 
-"""inserts letters at their positions
-            |
-            V"""
-for i in range(len(more_later[0])):
+for i in range(len(more_later[0])): #<- inserts letters at their positions
     resoult += ''.join(more_later[0][i])
     resoult += ''.join(more_later[1][i])
 
